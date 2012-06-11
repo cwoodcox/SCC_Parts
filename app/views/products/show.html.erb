@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Serial number:</b>
+  <%= @product.serial_number %>
+</p>
+
+<p>
+  <b>Date ordered:</b>
+  <%= @product.date_ordered %>
+</p>
+
+<p>
+  <b>Date received:</b>
+  <%= @product.date_received %>
+</p>
+
+<p>
+  <b>Date invoiced:</b>
+  <%= @product.date_invoiced %>
+</p>
+
+<p>
+  <b>Vendor invoice:</b>
+  <%= @product.vendor_invoice %>
+</p>
+
+<p>
+  <b>Scc invoice:</b>
+  <%= @product.scc_invoice %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @product.quantity %>
+</p>
+
+<p>
+  <b>Dollar amount:</b>
+  <%= @product.dollar_amount %>
+</p>
+
+<p>
+  <b>Warranty years:</b>
+  <%= @product.warranty_years %>
+</p>
+
+<p>
+  <b>Warranty days:</b>
+  <%= @product.warranty_days %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @product.item %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @product.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
