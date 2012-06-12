@@ -39,5 +39,7 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem "rspec-rails"
-  gem "annotate"
+  gem "annotate", '2.4.1.beta1'
 end
+
+gem 'will_paginate', '3.0.3'

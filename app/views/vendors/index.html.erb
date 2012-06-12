@@ -1,41 +1,41 @@
 <h1>Listing vendors</h1>
 
+<%= link_to 'New Vendor', new_vendor_path %>
+<br />
+
+<p><%= will_paginate @customers %></p>
 <table>
   <tr>
     <th>Vendor code</th>
     <th>Name</th>
     <th>Address1</th>
-    <th>Address2</th>
     <th>City</th>
     <th>State</th>
     <th>Zip code</th>
     <th>Phone</th>
-    <th>Contact</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @vendors.each do |vendor| %>
-  <tr>
-    <td><%= vendor.vendor_code %></td>
-    <td><%= vendor.name %></td>
-    <td><%= vendor.address1 %></td>
-    <td><%= vendor.address2 %></td>
-    <td><%= vendor.city %></td>
-    <td><%= vendor.state %></td>
-    <td><%= vendor.zip_code %></td>
-    <td><%= vendor.phone %></td>
-    <td><%= vendor.contact %></td>
-    <td><%= vendor.email %></td>
-    <td><%= link_to 'Show', vendor %></td>
-    <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
-    <td><%= link_to 'Destroy', vendor, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+	<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    	<td><dt><%= vendor.vendor_code %></dt></td>
+    	<td><dt><%= vendor.name %></dt></td>
+      	<td><dt><%= vendor.address1 %></dt></td>
+    	<td><dt><%= vendor.city %></dt></td>
+    	<td><dt><%= vendor.state %></dt></td>
+    	<td><dt><%= vendor.zip_code %></dt></td>
+    	<td><dt><%= vendor.phone %></dt></td>
+
+    	<td>
+    		<%= link_to 'Show', vendor %>
+    		<%= link_to 'Edit', edit_vendor_path(vendor) %>
+    		<%= link_to 'Destroy', vendor, confirm: 'Are you sure?', method: :delete %>
+    	</td>
+	</tr>
 <% end %>
+
 </table>
 
 <br />
 
-<%= link_to 'New Vendor', new_vendor_path %>
+<p><%= will_paginate @vendors %></p>

@@ -3,7 +3,7 @@ class VendorsController < ApplicationController
   # GET /vendors
   # GET /vendors.json
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.paginate page: params[:page], order: 'name', per_page: 20
 
     respond_to do |format|
       format.html # index.html.erb

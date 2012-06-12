@@ -1,31 +1,29 @@
 <h1>Listing categories</h1>
 
+<%= link_to 'New Category', new_category_path %>
+<br />
+
+<p><%= will_paginate @customers %></p>
 <table>
   <tr>
     <th>Name</th>
     <th>Description</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @categories.each do |category| %>
 	<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    	<td class="list_description">
-    		<dt><%= category.name %></dt>
-    	</td>
-		
-    	<td class="list_description">
-    		<dt><%= category.description %></dt>
-    	</td>
+    	<td><dt><%= category.name %></dt></td>
+    	<td><dt><%= category.description %></dt></td>
     	
-    	<td><%= link_to 'Show', category %></td>
-    	<td><%= link_to 'Edit', edit_category_path(category) %></td>
-    	<td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
+    	<td>
+    		<%= link_to 'Edit', edit_category_path(category) %>
+    		<%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %>
+    	</td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Category', new_category_path %>
+<p><%= will_paginate @categories %></p>

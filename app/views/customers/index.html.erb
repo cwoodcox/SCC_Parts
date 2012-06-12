@@ -1,41 +1,41 @@
 <h1>Listing customers</h1>
 
+<%= link_to 'New Customer', new_customer_path %>
+<br />
+
+<p><%= will_paginate @customers %></p>
 <table>
   <tr>
     <th>Customer code</th>
     <th>Name</th>
     <th>Address1</th>
-    <th>Address2</th>
     <th>City</th>
     <th>State</th>
     <th>Zip code</th>
     <th>Phone</th>
-    <th>Contact</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @customers.each do |customer| %>
-  <tr>
-    <td><%= customer.customer_code %></td>
-    <td><%= customer.name %></td>
-    <td><%= customer.address1 %></td>
-    <td><%= customer.address2 %></td>
-    <td><%= customer.city %></td>
-    <td><%= customer.state %></td>
-    <td><%= customer.zip_code %></td>
-    <td><%= customer.phone %></td>
-    <td><%= customer.contact %></td>
-    <td><%= customer.email %></td>
-    <td><%= link_to 'Show', customer %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+	<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    	<td><dt><%= customer.customer_code %></dt></td>
+    	<td><dt><%= customer.name %></dt></td>
+      	<td><dt><%= customer.address1 %></dt></td>
+    	<td><dt><%= customer.city %></dt></td>
+    	<td><dt><%= customer.state %></dt></td>
+    	<td><dt><%= customer.zip_code %></dt></td>
+    	<td><dt><%= customer.phone %></dt></td>
+
+    	<td>
+    		<%= link_to 'Show', customer %>
+    		<%= link_to 'Edit', edit_customer_path(customer) %>
+    		<%= link_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %>
+    	</td>
+	</tr>
 <% end %>
+
 </table>
 
 <br />
 
-<%= link_to 'New Customer', new_customer_path %>
+<p><%= will_paginate @customers %></p>

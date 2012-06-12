@@ -11,22 +11,26 @@
 		 </head>
 		 
 		<body class='<%= controller.controller_name %>'>
-			<header class="navbar navbar-fixed-top">
-      				<div class="navbar-inner">
-        				<div class="container">
-          					<%= link_to "parts tracking", '#', id: "logo" %>
-          					<nav>
-            					<ul class="nav pull-right">
-              						<li><%= link_to "Home",    '#' %></li>
-              						<li><%= link_to "Help",    '#' %></li>
-              						<li><%= link_to "Sign in", '#' %></li>
-            					</ul>
-          					</nav>
-        				</div>
-      				</div>
-    		</header>
-    		<div class="container">
-      			<%= yield %>
-    		</div>
+			<div id="banner">
+				<%= @page_title || "Stephenson Computer Consulting" %>
+			</div>
+			<div id="columns">
+				<div id="side">
+					<ul>
+              			<li><%= link_to "Home",    '#' %></li>
+              			<li><%= link_to "Help",    '#' %></li>
+              			<li><%= link_to "Sign in", '#' %></li>	
+              			<li><%= link_to "Customers", 'customers' %></li>	
+              			<li><%= link_to "Vendors", 'vendors' %></li>
+              			<li><%= link_to "Products", 'products' %></li>
+              			<li><%= link_to "Categories", 'categories' %></li>
+              			<li><%= link_to "Users", 'users' %></li>				
+              		</ul>
+          		</div>
+      			<div id="main">
+      				<%= yield %>
+      			</div>
+      		</div>
+      		</div>
 		</body>
 	</html>

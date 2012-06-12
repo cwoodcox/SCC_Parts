@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
+    @customers = Customer.paginate page: params[:page], order: 'name', per_page: 20
 
     respond_to do |format|
       format.html # index.html.erb
