@@ -34,7 +34,7 @@ describe CategoriesController do
     {}
   end
 
-  describe "GET index" do
+  describe "GET #index" do
     it "assigns all categories as @categories" do
       category = Category.create! valid_attributes
       get :index, {}, valid_session
@@ -42,7 +42,7 @@ describe CategoriesController do
     end
   end
 
-  describe "GET show" do
+  describe "GET #show" do
     it "assigns the requested category as @category" do
       category = Category.create! valid_attributes
       get :show, {:id => category.to_param}, valid_session
@@ -50,14 +50,14 @@ describe CategoriesController do
     end
   end
 
-  describe "GET new" do
+  describe "GET #new" do
     it "assigns a new category as @category" do
       get :new, {}, valid_session
       assigns(:category).should be_a_new(Category)
     end
   end
 
-  describe "GET edit" do
+  describe "GET #edit" do
     it "assigns the requested category as @category" do
       category = Category.create! valid_attributes
       get :edit, {:id => category.to_param}, valid_session
@@ -65,7 +65,7 @@ describe CategoriesController do
     end
   end
 
-  describe "POST create" do
+  describe "POST #create" do
     describe "with valid params" do
       it "creates a new Category" do
         expect {

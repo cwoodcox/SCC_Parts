@@ -25,5 +25,6 @@ end
 #  email         :string(255)
 #  created_at    :datetime        not null
 #  updated_at    :datetime        not null
+#  status_id     :integer(4)
 #
 

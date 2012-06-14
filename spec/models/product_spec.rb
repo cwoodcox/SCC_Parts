@@ -23,5 +23,8 @@ end
 #  comments       :text
 #  created_at     :datetime        not null
 #  updated_at     :datetime        not null
+#  vendor_id      :integer(4)
+#  customer_id    :integer(4)
+#  category_id    :integer(4)
 #
 
