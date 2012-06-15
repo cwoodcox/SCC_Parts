@@ -1,20 +1,17 @@
 <h1>Listing products</h1>
 
+<%= link_to 'New Product', new_product_path %>
+
+<p><%= will_paginate @products %></p>
+
 <table>
   <tr>
     <th>Name</th>
     <th>Serial number</th>
-    <th>Date ordered</th>
-    <th>Date received</th>
     <th>Date invoiced</th>
     <th>Vendor invoice</th>
     <th>Scc invoice</th>
-    <th>Quantity</th>
-    <th>Dollar amount</th>
-    <th>Warranty years</th>
-    <th>Warranty days</th>
-    <th>Item</th>
-    <th>Comments</th>
+    <th>Customer</th>
     <th></th>
     <th></th>
     <th></th>
@@ -24,17 +21,10 @@
   <tr>
     <td><%= product.name %></td>
     <td><%= product.serial_number %></td>
-    <td><%= product.date_ordered %></td>
-    <td><%= product.date_received %></td>
     <td><%= product.date_invoiced %></td>
     <td><%= product.vendor_invoice %></td>
     <td><%= product.scc_invoice %></td>
-    <td><%= product.quantity %></td>
-    <td><%= product.dollar_amount %></td>
-    <td><%= product.warranty_years %></td>
-    <td><%= product.warranty_days %></td>
-    <td><%= product.item %></td>
-    <td><%= product.comments %></td>
+    <td><%= product.customer_id %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
@@ -42,6 +32,4 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Product', new_product_path %>
+<p><%= will_paginate @products %></p>

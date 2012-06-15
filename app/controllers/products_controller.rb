@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
-
+    @products = Product.paginate page: params[:page], order: 'date_invoiced desc', per_page: 20
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

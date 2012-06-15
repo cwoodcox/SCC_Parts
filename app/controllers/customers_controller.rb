@@ -18,7 +18,7 @@ class CustomersController < ApplicationController
 	
     @product = Customer.product.paginate page: params[:page], order: 'date_invoiced desc', per_page: 20
     
-    respond_to do |format|
+	respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @customer }
     end

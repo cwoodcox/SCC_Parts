@@ -50,8 +50,9 @@
   <%= @customer.email %>
 </p>
 
+<h2>Products</hs>
 <% @customer.products.each do |product| %>
-	<%= render :partial => "products/parts_list", :locals => {:product => product} %>
+	<%= render :partial => "products/product", :locals => {:products => product} %>
 <% end%>
 
 
