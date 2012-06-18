@@ -15,8 +15,7 @@ class CustomersController < ApplicationController
   # GET /customers/1.json
   def show
     @customer = Customer.find(params[:id])
-	
-    @product = Customer.product.paginate page: params[:page], order: 'date_invoiced desc', per_page: 20
+    @product = @customer.products.paginate page: params[:page], order: 'date_invoiced desc', per_page: 20
     
 	respond_to do |format|
       format.html # show.html.erb
